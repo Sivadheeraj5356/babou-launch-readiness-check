@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Launch Readiness Check</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<main class="wrap">
+  <header>
+    <h1>Launch Readiness Check</h1>
+    <p class="sub">Shipping is only half the launch. Paste release-note entries as <code>change | &lt;text&gt;</code> and launch-kit items as <code>asset | &lt;text&gt;</code>, one per line. The check flags which changes read as campaign-worthy, which look internal, and whether demo, social and doc assets are listed. Heuristic review, not a marketing strategy.</p>
+  </header>
+
+  <section class="card">
+    <label class="lbl" for="notes">Changes and assets, one per line</label>
+    <textarea id="notes" rows="9" spellcheck="false">change | New: one-click campaign drafts from every merged PR
+change | Added template gallery for launch videos
+change | chore: bump postcss dependency
+change | refactor media job queue internals
+asset | 45s demo video of the campaign draft flow
+asset | LinkedIn post copy for the launch
+asset | Docs page: getting started with campaign drafts</textarea>
+
+    <button id="run" type="button">Run readiness check</button>
+  </section>
+
+  <section id="results" class="hidden">
+    <div class="card">
+      <h2>Findings <span id="stats" class="stats"></span></h2>
+      <ul id="findings" class="findings"></ul>
+    </div>
+  </section>
+
+  <footer>Plain HTML, CSS and JavaScript. No external services, build step or secrets. Tests: <code>npm test</code>.</footer>
+</main>
+<script src="launch.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
