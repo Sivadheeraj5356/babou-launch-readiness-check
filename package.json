@@ -1,0 +1,7 @@
+{
+  "name": "babou-launch-readiness-check",
+  "version": "1.0.0",
+  "description": "Heuristic review of release notes and launch-kit assets: campaign candidates, internal-only changes and missing demo/social/doc pieces",
+  "scripts": { "test": "node --test" },
+  "license": "MIT"
+}
